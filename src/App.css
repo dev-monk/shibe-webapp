@@ -1,0 +1,54 @@
+.App, .Favourites {
+  text-align: center;
+}
+
+.image-grid {
+  display: grid;
+  margin: 15px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+}
+
+.image-item {
+  position: relative;
+}
+
+.image-item:active {
+  transform: scale(0.98);
+}
+
+.image-item > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .heart > svg {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 50px;
+    fill: #FD2958;
+    z-index: 10000;
+  }
+
+  .image-heart {
+    position: absolute;
+    top: 10px;
+    width: 80%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .Favourites .heart > svg {
+    fill: #FD2958;
+    animation: pulse 1s ease infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+  }
